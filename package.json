@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "cg-archiver": "github:w3c-ccg/cg-archiver"
+  }
+}
