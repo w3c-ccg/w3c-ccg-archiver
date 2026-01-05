@@ -25,6 +25,8 @@ jobs:
       - name: Setup Google API credentials
         run: echo '${{ secrets.CREDENTIALS_JSON }}' > node_modules/cg-archiver/credentials.json
       - name: Download logs and minutes
-        run: node_modules/cg-archiver/cg-archiver
+        working-directory: node_modules/cg-archiver
+        run: ./cg-archiver
       - name: Send logs and minutes to archival server
-        run: node_modules/cg-archiver/cg-archiver -u
+        working-directory: node_modules/cg-archiver
+        run: cg-archiver -u
