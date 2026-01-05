@@ -28,11 +28,13 @@ jobs:
       - run: npm install
       - name: Copy W3C CCG configuration
         run: cp config.js node_modules/cg-archiver
-      - name: Setup Google API credentials
-        run: echo '${{ secrets.CREDENTIALS_JSON }}' > node_modules/cg-archiver/credentials.json
+#      - name: Setup Google API credentials
+#        run: echo '${{ secrets.CREDENTIALS_JSON }}' > node_modules/cg-archiver/credentials.json
       - name: Download logs and minutes
         working-directory: node_modules/cg-archiver
-        run: ./cg-archiver -d 2025-12-09
+        run: |
+          mkdir logs
+          ./cg-archiver -d 2025-12-09
       - name: Send logs and minutes to archival server
         working-directory: node_modules/cg-archiver
         run: ./cg-archiver -d 2025-12-09 -u
