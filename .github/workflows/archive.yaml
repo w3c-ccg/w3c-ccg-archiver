@@ -1,0 +1,23 @@
+name: Archive Meetings
+
+on:
+  schedule:
+    - cron: '30 23 * * 1-5
+
+jobs:
+  archive-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          check-latest: true
+      - run: npm install
+      - name: Copy W3C CCG configuration
+        run: cp config.js node_modules/cg-archiver
+      - name: Download logs and minutes
+        run: node_modules/cg-archiver/cg-archiver
+      - name: Send logs and minutes to archival server
+        run: node_modules/cg-archiver/cg-archiver -u
