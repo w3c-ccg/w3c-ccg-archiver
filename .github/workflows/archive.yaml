@@ -35,4 +35,4 @@ jobs:
         run: ./cg-archiver
       - name: Send logs and minutes to archival server
         working-directory: node_modules/cg-archiver
-        run: cg-archiver -u
+        run: ./cg-archiver -u
