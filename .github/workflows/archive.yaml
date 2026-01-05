@@ -3,6 +3,12 @@ name: Archive Meetings
 on:
   schedule:
     - cron: '30 23 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for running'
+        required: false
+        default: 'Debugging workflow'
 
 jobs:
   archive-task:
