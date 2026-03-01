@@ -1,6 +1,8 @@
 # W3C CCG Archiver
 
-This repository is the configuration for the W3C Credentials Community Group (CCG) instance of the [cg-archiver](https://github.com/w3c-ccg/cg-archiver) tool.
+This repository is the configuration for the
+[W3C Credentials Community Group](https://w3c-ccg.org/) (CCG)
+instance of the [cg-archiver](https://github.com/w3c-ccg/cg-archiver) tool.
 
 It automatically archives Google Meet recordings and transcripts for CCG  meetings to community-owned infrastructure at
 [meet.w3c-ccg.org](https://meet.w3c-ccg.org/archives/).
@@ -22,5 +24,5 @@ The following recurring meetings are configured for archival:
 
 - [cg-archiver](https://github.com/w3c-ccg/cg-archiver) — The underlying
   archiver tool this repository configures
-- [W3C Credentials Community Group](https://www.w3.org/community/credentials/)
+- [W3C Credentials Community Group](https://w3c-ccg.org/)
 - [CCG Meeting Archives](https://meet.w3c-ccg.org/archives/)
