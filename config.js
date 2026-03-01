@@ -40,7 +40,7 @@ export default {
     name: 'VCWG Spec Refinement',
     email: 'public-vc-wg@w3.org',
     googleMeetId: 'tbs-dswy-rpo',
-    htmlTemplate: 'templates/w3c-wg-meeting-template.html'
+    scribe2: true
   }],
   geminiApiKey: '',
   googleApiOauth2Token: ''
