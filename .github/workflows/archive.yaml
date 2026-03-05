@@ -10,6 +10,11 @@ on:
         type: string
         required: false
         default: ''
+      upload_and_email:
+        description: 'Perform upload and email?'
+        type: boolean
+        required: true
+        default: false
       reason:
         description: 'Reason for manual intervention'
         required: false
@@ -30,22 +35,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - uses: perl-actions/install-with-cpm@v1
-        with:
-          modules: "LWP::UserAgent LWP::Protocol::https"
+      - name: Install libwww perl packages
+        run: |
+          sudo apt-get install libwww-perl
+        shell: bash
       - run: npm install
       - name: Copy W3C CCG configuration
         run: cp config.js node_modules/cg-archiver
+      - name: Determine meeting scan date
+        run: |
+          export TODAY=`TZ='America/New_York' date -I`
+          export PROVIDED_SCAN_DATE=${{ inputs.scan_date }}
+          export SCAN_DATE=${PROVIDED_SCAN_DATE:-$TODAY}
+          echo "SCAN_DATE=$SCAN_DATE" >> $GITHUB_ENV
+          echo "Scanning for meetings on $SCAN_DATE ..."
       - name: Download logs and minutes
         working-directory: node_modules/cg-archiver
         run: |
-          TODAY=`TZ='America/New_York' date -I`
-          SCAN_DATE="${{ github.event.inputs.scan_date || TODAY }}"
           mkdir logs
-          ./cg-archiver -d $SCAN_DATE
+          ./cg-archiver -d ${{env.SCAN_DATE}}
       - name: Send announcement, logs, and minutes to archival servers
+        if: ${{ inputs.upload_and_email == 'true' }}
         working-directory: node_modules/cg-archiver
         run: |
-          TODAY=`TZ='America/New_York' date -I`
-          SCAN_DATE="${{ github.event.inputs.scan_date || TODAY }}"
-          ./cg-archiver -d $SCAN_DATE -u -e
+          ./cg-archiver -d ${{env.SCAN_DATE}} -u -e
