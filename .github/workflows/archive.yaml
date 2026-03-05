@@ -5,10 +5,15 @@ on:
     - cron: '30 23 * * 1-5'
   workflow_dispatch:
     inputs:
-      reason:
-        description: 'Reason for running'
+      scan_date:
+        description: 'Meeting date (YYYY-MM-DD)'
+        type: string
         required: false
-        default: 'Debugging workflow'
+        default: ''
+      reason:
+        description: 'Reason for manual intervention'
+        required: false
+        default: 'Debugging the workflow'
 
 jobs:
   archive-task:
@@ -25,14 +30,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: perl-actions/install-with-cpm@v1
+        with:
+          modules: "LWP::UserAgent LWP::Protocol::https"
       - run: npm install
       - name: Copy W3C CCG configuration
         run: cp config.js node_modules/cg-archiver
       - name: Download logs and minutes
         working-directory: node_modules/cg-archiver
         run: |
+          TODAY=`TZ='America/New_York' date -I`
+          SCAN_DATE="${{ github.event.inputs.scan_date || TODAY }}"
           mkdir logs
-          ./cg-archiver
+          ./cg-archiver -d $SCAN_DATE
       - name: Send announcement, logs, and minutes to archival servers
         working-directory: node_modules/cg-archiver
-        run: ./cg-archiver -u -e
+        run: |
+          TODAY=`TZ='America/New_York' date -I`
+          SCAN_DATE="${{ github.event.inputs.scan_date || TODAY }}"
+          ./cg-archiver -d $SCAN_DATE -u -e
