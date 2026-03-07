@@ -56,7 +56,7 @@ jobs:
           mkdir logs
           ./cg-archiver -d ${{env.SCAN_DATE}}
       - name: Send announcement, logs, and minutes to archival servers
-        if: ${{ inputs.upload_and_email == 'true' }}
+        if: ${{ inputs.upload_and_email }}
         working-directory: node_modules/cg-archiver
         run: |
           ./cg-archiver -d ${{env.SCAN_DATE}} -u -e
