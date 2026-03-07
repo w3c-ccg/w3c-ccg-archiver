@@ -42,13 +42,14 @@ jobs:
       - run: npm install
       - name: Copy W3C CCG configuration
         run: cp config.js node_modules/cg-archiver
-      - name: Determine meeting scan date
+      - name: Determine meeting scan date and publication preference
         run: |
           export TODAY=`TZ='America/New_York' date -I`
           export PROVIDED_SCAN_DATE=${{ inputs.scan_date }}
           export SCAN_DATE=${PROVIDED_SCAN_DATE:-$TODAY}
           echo "SCAN_DATE=$SCAN_DATE" >> $GITHUB_ENV
-          echo "Scanning for meetings on $SCAN_DATE ..."
+          echo "Scanning for meetings on $SCAN_DATE..."
+          echo "Upload and email: ${{ inputs.upload_and_email }}"
       - name: Download logs and minutes
         working-directory: node_modules/cg-archiver
         run: |
