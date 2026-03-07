@@ -14,7 +14,7 @@ on:
         description: 'Perform upload and email?'
         type: boolean
         required: true
-        default: false
+        default: true
       reason:
         description: 'Reason for manual intervention'
         required: false
