@@ -46,17 +46,20 @@ jobs:
         run: |
           export TODAY=`TZ='America/New_York' date -I`
           export PROVIDED_SCAN_DATE=${{ inputs.scan_date }}
+          export PROVIDED_UPLOAD_AND_EMAIL=${{ inputs.upload_and_email }}
           export SCAN_DATE=${PROVIDED_SCAN_DATE:-$TODAY}
+          export UPLOAD_AND_EMAIL=${PROVIDED_UPLOAD_AND_EMAIL:-true}
           echo "SCAN_DATE=$SCAN_DATE" >> $GITHUB_ENV
+          echo "UPLOAD_AND_EMAIL=$UPLOAD_AND_EMAIL" >> $GITHUB_ENV
           echo "Scanning for meetings on $SCAN_DATE..."
-          echo "Upload and email: ${{ inputs.upload_and_email }}"
+          echo "Upload and email: $UPLOAD_AND_EMAIL"
       - name: Download logs and minutes
         working-directory: node_modules/cg-archiver
         run: |
           mkdir logs
           ./cg-archiver -d ${{env.SCAN_DATE}}
       - name: Send announcement, logs, and minutes to archival servers
-        if: ${{ inputs.upload_and_email }}
+        if: ${{ env.UPLOAD_AND_EMAIL }}
         working-directory: node_modules/cg-archiver
         run: |
           ./cg-archiver -d ${{env.SCAN_DATE}} -u -e
