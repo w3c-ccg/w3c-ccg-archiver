@@ -25,7 +25,7 @@ export default {
     email: 'public-credentials@w3.org',
     googleMeetId: 'gfr-xkgz-pox'
   }, {
-    name: 'CCG Incubation',
+    name: 'CCG VCs for Recognition',
     email: 'public-credentials@w3.org',
     googleMeetId: 'osb-nmyo-muh'
   }, {
