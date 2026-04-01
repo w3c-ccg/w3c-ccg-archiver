@@ -9,7 +9,7 @@ export default {
     privateKey: ''
   },
   meetings: [{
-    name: 'CCG Atlantic Weekly',
+    name: 'CCG Atlantic',
     email: 'public-credentials@w3.org',
     googleMeetId: 'dzc-yjfq-tyf'
   }, {
@@ -17,7 +17,7 @@ export default {
     email: 'public-credentials@w3.org',
     googleMeetId: 'kte-hamg-bpj'
   }, {
-    name: 'CCG VCALM',
+    name: 'VCWG VCALM',
     email: 'public-credentials@w3.org',
     googleMeetId: 'fuw-kgcv-yar'
   }, {
@@ -25,7 +25,7 @@ export default {
     email: 'public-credentials@w3.org',
     googleMeetId: 'gfr-xkgz-pox'
   }, {
-    name: 'CCG VCs for Recognition',
+    name: 'VCWG Entity Recognition',
     email: 'public-credentials@w3.org',
     googleMeetId: 'osb-nmyo-muh'
   }, {
