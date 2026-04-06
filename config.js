@@ -1,5 +1,5 @@
 export default {
-  community: 'w3c-ccg',
+  community: 'w3c',
   logDir: './logs',
   archive: {
     host: 'meet.w3c-ccg.org',
@@ -19,15 +19,18 @@ export default {
   }, {
     name: 'VCWG VCALM',
     email: 'public-credentials@w3.org',
-    googleMeetId: 'fuw-kgcv-yar'
+    googleMeetId: 'fuw-kgcv-yar',
+    scribe2: true
   }, {
-    name: 'CCG Data Integrity',
+    name: 'VCWG Barcodes and Data Integrity',
     email: 'public-credentials@w3.org',
-    googleMeetId: 'gfr-xkgz-pox'
+    googleMeetId: 'gfr-xkgz-pox',
+    scribe2: true
   }, {
     name: 'VCWG Entity Recognition',
     email: 'public-credentials@w3.org',
-    googleMeetId: 'osb-nmyo-muh'
+    googleMeetId: 'osb-nmyo-muh',
+    scribe2: true
   }, {
     name: 'CCG Asia-Pacific',
     email: 'public-credentials@w3.org',
@@ -35,7 +38,8 @@ export default {
   }, {
     name: 'DID WG Special Topic',
     email: 'public-did-wg@w3.org',
-    googleMeetId: 'ydj-wmnw-dto'
+    googleMeetId: 'ydj-wmnw-dto',
+    scribe2: true
   }, {
     name: 'VCWG Spec Refinement',
     email: 'public-vc-wg@w3.org',
