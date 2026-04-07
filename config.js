@@ -18,17 +18,17 @@ export default {
     googleMeetId: 'kte-hamg-bpj'
   }, {
     name: 'VCWG VCALM',
-    email: 'public-credentials@w3.org',
+    email: 'public-vc-wg@w3.org',
     googleMeetId: 'fuw-kgcv-yar',
     scribe2: true
   }, {
     name: 'VCWG Barcodes and Data Integrity',
-    email: 'public-credentials@w3.org',
+    email: 'public-vc-wg@w3.org',
     googleMeetId: 'gfr-xkgz-pox',
     scribe2: true
   }, {
     name: 'VCWG Entity Recognition',
-    email: 'public-credentials@w3.org',
+    email: 'public-vc-wg@w3.org',
     googleMeetId: 'osb-nmyo-muh',
     scribe2: true
   }, {
