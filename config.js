@@ -41,7 +41,7 @@ export default {
     googleMeetId: 'ydj-wmnw-dto',
     scribe2: true
   }, {
-    name: 'VCWG Spec Refinement',
+    name: 'VCWG Confidence Method',
     email: 'public-vc-wg@w3.org',
     googleMeetId: 'tbs-dswy-rpo',
     scribe2: true
