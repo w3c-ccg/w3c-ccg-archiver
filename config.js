@@ -45,6 +45,11 @@ export default {
     email: 'public-vc-wg@w3.org',
     googleMeetId: 'tbs-dswy-rpo',
     scribe2: true
+  }, {
+    name: 'VCWG Product and Wallet Vocabularies',
+    email: 'public-vc-wg@w3.org',
+    googleMeetId: 'trc-empb-ddf',
+    scribe2: true
   }],
   geminiApiKey: '',
   googleApiOauth2Token: ''
