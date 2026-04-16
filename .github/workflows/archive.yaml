@@ -2,8 +2,7 @@ name: Archive Meetings
 
 on:
   schedule:
-    - cron: '00 22 * * 1-5'
-      timezone: 'America/New_York'
+    - cron: '30 23 * * 1-5'
   workflow_dispatch:
     inputs:
       scan_date:
