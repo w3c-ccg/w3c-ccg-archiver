@@ -27,7 +27,7 @@ export default {
     googleMeetId: 'gfr-xkgz-pox',
     scribe2: true
   }, {
-    name: 'VCWG Entity Recognition',
+    name: 'VCWG Recognized Entities',
     email: 'public-vc-wg@w3.org',
     googleMeetId: 'osb-nmyo-muh',
     scribe2: true
@@ -44,6 +44,11 @@ export default {
     name: 'VCWG Confidence Method',
     email: 'public-vc-wg@w3.org',
     googleMeetId: 'tbs-dswy-rpo',
+    scribe2: true
+  }, {
+    name: 'VCWG Render Method',
+    email: 'public-vc-wg@w3.org',
+    googleMeetId: 'jvc-tfch-gcr',
     scribe2: true
   }, {
     name: 'VCWG Product and Wallet Vocabularies',
