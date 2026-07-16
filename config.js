@@ -55,6 +55,10 @@ export default {
     email: 'public-vc-wg@w3.org',
     googleMeetId: 'trc-empb-ddf',
     scribe2: true
+  }, {
+    name: 'CCG Capability-based Storage',
+    email: 'public-credentials@w3.org',
+    googleMeetId: 'egr-ians-oms'
   }],
   geminiApiKey: '',
   googleApiOauth2Token: ''
