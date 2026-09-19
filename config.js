@@ -51,9 +51,14 @@ export default {
     googleMeetId: 'jvc-tfch-gcr',
     scribe2: true
   }, {
-    name: 'VCWG Product and Wallet Vocabularies',
+    name: 'VCWG Business Wallet',
     email: 'public-vc-wg@w3.org',
     googleMeetId: 'trc-empb-ddf',
+    scribe2: true
+  }, {
+    name: 'VCWG Digital Product Passport',
+    email: 'public-vc-wg@w3.org',
+    googleMeetId: 'jgg-dtag-esn',
     scribe2: true
   }, {
     name: 'CCG Capability-based Storage',
